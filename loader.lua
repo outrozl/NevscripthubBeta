@@ -16,7 +16,7 @@ function Kavo:DraggingEnabled(frame, parent)
     local dragInput, mousePos, framePos
 
     frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             dragging = true
             mousePos = input.Position
             framePos = parent.Position
@@ -30,7 +30,7 @@ function Kavo:DraggingEnabled(frame, parent)
     end)
 
     frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement then
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
     end)
@@ -233,8 +233,6 @@ function Kavo.CreateLib(kavName, themeList)
     Main.ClipsDescendants = true
     Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
     Main.Size = UDim2.new(0, 525, 0, 318)
-    Main.active = true
-    Main.draggable = true
 
     MainCorner.CornerRadius = UDim.new(0, 4)
     MainCorner.Name = "MainCorner"
@@ -248,8 +246,6 @@ function Kavo.CreateLib(kavName, themeList)
     headerCover.CornerRadius = UDim.new(0, 4)
     headerCover.Name = "headerCover"
     headerCover.Parent = MainHeader
-    Mainheader.active = true
-    Mainheader.draggable = true
 
     coverup.Name = "coverup"
     coverup.Parent = MainHeader
