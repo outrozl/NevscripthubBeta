@@ -241,6 +241,49 @@ for _, scriptName in ipairs(sortedScriptNames) do
     }
 end
 
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = utilitys[scriptName]
+    UtilitysTab:AddButton{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "There was an error loading the script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
+
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = other[scriptName]
+    OtherTab:AddButton{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "There was an error loading the script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
 
 -- UI Loaded notify
 
