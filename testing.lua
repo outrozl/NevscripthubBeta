@@ -219,6 +219,12 @@ for _, scriptName in ipairs(sortedScriptNames) do
     }
 end
 
+local sortedScriptNames = {}
+for scriptName, _ in pairs(mobile) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = mobile[scriptName]
     MobileTab:AddButton{
@@ -241,6 +247,12 @@ for _, scriptName in ipairs(sortedScriptNames) do
     }
 end
 
+local sortedScriptNames = {}
+for scriptName, _ in pairs(utilitys) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = utilitys[scriptName]
     UtilitysTab:AddButton{
@@ -262,6 +274,12 @@ for _, scriptName in ipairs(sortedScriptNames) do
         end
     }
 end
+
+local sortedScriptNames = {}
+for scriptName, _ in pairs(other) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
 
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = other[scriptName]
