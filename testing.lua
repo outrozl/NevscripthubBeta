@@ -93,8 +93,8 @@ Tab:AddDropdown({
 Tab:AddSlider({
 	Name = "Velocity",
 	Min = 0,
-	Max = 20,
-	Default = 5,
+	Max = 500,
+	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Speed",
@@ -106,8 +106,8 @@ Tab:AddSlider({
 Tab:AddSlider({
 	Name = "Jump Power",
 	Min = 0,
-	Max = 20,
-	Default = 5,
+	Max = 500,
+	Default = 50,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Power",
