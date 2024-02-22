@@ -220,7 +220,7 @@ for _, scriptName in ipairs(sortedScriptNames) do
 end
 
 for _, scriptName in ipairs(sortedScriptNames) do
-    local scriptData = best[scriptName]
+    local scriptData = mobile[scriptName]
     MobileTab:AddButton{
         Name = scriptName,
         Description = nil,
